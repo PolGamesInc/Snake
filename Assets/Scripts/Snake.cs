@@ -1,13 +1,16 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Snake : MonoBehaviour
 {
-    private Vector2 _direction = Vector2.up;
+    private Vector2 _direction = Vector2.zero;
+    private int Score;
     private List<Transform> _segments = new List<Transform>();
 
     [SerializeField] private Transform segmentPrefab;
     [SerializeField] private int initialSize;
+    [SerializeField] private Text ScoreText;
 
     private void Start()
     {
@@ -16,6 +19,8 @@ public class Snake : MonoBehaviour
 
     private void Update()
     {
+        ScoreText.text = Score.ToString();
+
         if(Input.GetKeyDown(KeyCode.UpArrow))
         {
             _direction = Vector2.up;
@@ -67,6 +72,8 @@ public class Snake : MonoBehaviour
             _segments.Add(Instantiate(this.segmentPrefab));
         }
 
+        Score = 0;
+
         this.transform.position = Vector3.zero;
     }
 
@@ -75,10 +82,31 @@ public class Snake : MonoBehaviour
         if (collision.tag == "Food")
         {
             Grow();
+            Score += 7;
         }
         else if(collision.tag == "Obstacle")
         {
             ResetStay();
         }
+    }
+
+    public void MoveUp()
+    {
+        _direction = Vector2.up;
+    }
+
+    public void MoveDown()
+    {
+        _direction = Vector2.down;
+    }
+
+    public void MoveLeft()
+    {
+        _direction = Vector2.left;
+    }
+
+    public void MoveRight()
+    {
+        _direction = Vector2.right;
     }
 }
