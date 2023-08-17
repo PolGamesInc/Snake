@@ -1,12 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Snake : MonoBehaviour
 {
     private Vector2 _direction = Vector2.zero;
     private int Score;
     private List<Transform> _segments = new List<Transform>();
+    private string LossScene = "Loss";
 
     [SerializeField] private Transform segmentPrefab;
     [SerializeField] private int initialSize;
@@ -74,7 +76,8 @@ public class Snake : MonoBehaviour
 
         Score = 0;
 
-        this.transform.position = Vector3.zero;
+        SceneManager.LoadScene(LossScene);
+        //this.transform.position = Vector3.zero;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -87,6 +90,19 @@ public class Snake : MonoBehaviour
         else if(collision.tag == "Obstacle")
         {
             ResetStay();
+        }
+
+        if(collision.tag == "GoodWallX")
+        {
+            Vector2 playerPosX = transform.position;
+            playerPosX.x = -playerPosX.x;
+            transform.position = playerPosX;
+        }
+        else if(collision.tag == "GoodWallY")
+        {
+            Vector2 playerPosY = transform.position;
+            playerPosY.y = playerPosY.y -= 6;
+            transform.position = playerPosY;
         }
     }
 
