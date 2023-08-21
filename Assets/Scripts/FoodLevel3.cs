@@ -7,6 +7,7 @@ public class FoodLevel3 : MonoBehaviour
     [SerializeField] private BoxCollider2D gridAreaTwo;
     [SerializeField] private BoxCollider2D gridAreaFree;
     [SerializeField] private BoxCollider2D gridAreaFour;
+    [SerializeField] private BoxCollider2D gridAreaFive;
 
     [SerializeField] private int numberGridArea;
 
@@ -15,6 +16,7 @@ public class FoodLevel3 : MonoBehaviour
         RandomazePositionOne();
         RandomazePositionTwo();
         RandomazePositionFree();
+        
     }
 
     private void Update()
@@ -35,6 +37,11 @@ public class FoodLevel3 : MonoBehaviour
         }
 
         if (numberGridArea == 4)
+        {
+            print(numberGridArea);
+        }
+
+        if(numberGridArea == 5)
         {
             print(numberGridArea);
         }
@@ -80,11 +87,21 @@ public class FoodLevel3 : MonoBehaviour
         this.transform.position = new Vector3(Mathf.Round(x), Mathf.Round(y), 0.0f);
     }
 
+    private void RandomazePositionFive()
+    {
+        Bounds boundsGridAreaFive = this.gridAreaFive.bounds;
+
+        float x = Random.Range(boundsGridAreaFive.min.x, boundsGridAreaFive.max.x);
+        float y = Random.Range(boundsGridAreaFive.min.y, boundsGridAreaFive.max.y);
+
+        this.transform.position = new Vector3(Mathf.Round(x), Mathf.Round(y), 0.0f);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
-            numberGridArea = Random.Range(0, 5);
+            numberGridArea = Random.Range(0, 6);
             StartCoroutine(numberGridAreaNull());
             if(numberGridArea == 1)
             {
@@ -104,6 +121,11 @@ public class FoodLevel3 : MonoBehaviour
             if (numberGridArea == 4)
             {
                 RandomazePositionFour();
+            }
+
+            if(numberGridArea == 5)
+            {
+                RandomazePositionFive();
             }
         }
     }

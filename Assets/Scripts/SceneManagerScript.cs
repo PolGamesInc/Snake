@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,6 +11,9 @@ public class SceneManagerScript : MonoBehaviour
     private string Level1 = "Game";
     private string Level2 = "GameWithoutWalls";
     private string Level3 = "Level3";
+    private string Level4 = "Level4";
+    private string Level5 = "Level5";
+    private string Level6 = "Level6";
 
     public void GoLevel1()
     {
@@ -24,6 +28,21 @@ public class SceneManagerScript : MonoBehaviour
     public void GoLevel3()
     {
         SceneManager.LoadScene(Level3);
+    }
+
+    public void GoLevel4()
+    {
+        SceneManager.LoadScene(Level4);
+    }
+
+    public void GoLevel5()
+    {
+        SceneManager.LoadScene(Level5);
+    }
+
+    public void GoLevel6()
+    {
+        SceneManager.LoadScene(Level6);
     }
 
     public void GoMenu()
