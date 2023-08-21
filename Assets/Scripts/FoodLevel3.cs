@@ -10,6 +10,7 @@ public class FoodLevel3 : MonoBehaviour
     [SerializeField] private BoxCollider2D gridAreaFive;
 
     [SerializeField] private int numberGridArea;
+    [SerializeField] private AudioClip SoundSelection;
 
     private void Start()
     {
@@ -101,6 +102,10 @@ public class FoodLevel3 : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            AudioSource audioSource = GetComponent<AudioSource>();
+            audioSource.clip = SoundSelection;
+            audioSource.Play();
+
             numberGridArea = Random.Range(0, 6);
             StartCoroutine(numberGridAreaNull());
             if(numberGridArea == 1)

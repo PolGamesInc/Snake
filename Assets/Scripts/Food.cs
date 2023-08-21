@@ -3,6 +3,7 @@ using UnityEngine;
 public class Food : MonoBehaviour
 {
     [SerializeField] private BoxCollider2D gridArea;
+    [SerializeField] private AudioClip SoundSelection;
 
     private void Start()
     {
@@ -24,6 +25,9 @@ public class Food : MonoBehaviour
         if(collision.tag == "Player")
         {
             RandomazePosition();
+            AudioSource audioSource = GetComponent<AudioSource>();
+            audioSource.clip = SoundSelection;
+            audioSource.Play();
         }
     }
 }
