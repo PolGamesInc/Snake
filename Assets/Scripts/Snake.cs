@@ -14,6 +14,8 @@ public class Snake : MonoBehaviour
     [SerializeField] private int initialSize;
     [SerializeField] private Text ScoreText;
 
+    public bool StatusScripts = true;
+
     private void Start()
     {
         for (int i = 1; i < _segments.Count; i++)
@@ -105,16 +107,24 @@ public class Snake : MonoBehaviour
             playerPosY.y = playerPosY.y -= 6;
             transform.position = playerPosY;
         }
+
+        if(collision.tag == "ObstacleWall")
+        {
+            ResetStay();
+        }
     }
 
     private void FindSnakeSigmentsClone()
     {
-        GameObject[] snakeSegmentsArray = GameObject.FindGameObjectsWithTag("SnakeSegments");
-        if(Score == 7)
+        if (StatusScripts == true)
         {
-            for(int i = 0; i < snakeSegmentsArray.Length; i++)
+            GameObject[] snakeSegmentsArray = GameObject.FindGameObjectsWithTag("SnakeSegments");
+            if (Score >= 7)
             {
-                snakeSegmentsArray[i].tag = "Obstacle";
+                for (int i = 0; i < snakeSegmentsArray.Length; i++)
+                {
+                    snakeSegmentsArray[i].tag = "Obstacle";
+                }
             }
         }
     }

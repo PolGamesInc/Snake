@@ -556,7 +556,7 @@ GameObject:
   - component: {fileID: 208606564}
   m_Layer: 0
   m_Name: WallUp
-  m_TagString: Obstacle
+  m_TagString: ObstacleWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -851,7 +851,7 @@ GameObject:
   - component: {fileID: 427007959}
   m_Layer: 0
   m_Name: WallRight
-  m_TagString: Obstacle
+  m_TagString: ObstacleWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1054,7 +1054,7 @@ GameObject:
   - component: {fileID: 510116021}
   m_Layer: 0
   m_Name: WallLeft
-  m_TagString: Obstacle
+  m_TagString: ObstacleWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1433,7 +1433,7 @@ GameObject:
   - component: {fileID: 684674375}
   m_Layer: 0
   m_Name: WallDown
-  m_TagString: Obstacle
+  m_TagString: ObstacleWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1742,6 +1742,7 @@ MonoBehaviour:
   segmentPrefab: {fileID: 2422246033652933775, guid: 642ca92058c828f4c9f0f0e927e3d7c1, type: 3}
   initialSize: 4
   ScoreText: {fileID: 1810567200}
+  StatusScripts: 1
 --- !u!61 &941673393
 BoxCollider2D:
   m_ObjectHideFlags: 0
