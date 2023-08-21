@@ -16,7 +16,22 @@ public class Snake : MonoBehaviour
 
     private void Start()
     {
-        ResetStay();
+        for (int i = 1; i < _segments.Count; i++)
+        {
+            Destroy(_segments[i].gameObject);
+        }
+
+        _segments.Clear();
+        _segments.Add(this.transform);
+
+        for (int i = 1; i < this.initialSize; i++)
+        {
+            _segments.Add(Instantiate(this.segmentPrefab));
+        }
+
+        Score = 0;
+
+        this.transform.position = new Vector2(-4, -4);
     }
 
     private void Update()
@@ -39,6 +54,8 @@ public class Snake : MonoBehaviour
         {
             _direction = Vector2.right;
         }
+
+        FindSnakeSigmentsClone();
     }
 
     private void FixedUpdate()
@@ -61,23 +78,7 @@ public class Snake : MonoBehaviour
 
     private void ResetStay()
     {
-        for(int i = 1; i <_segments.Count; i++)
-        {
-            Destroy(_segments[i].gameObject);
-        }
-
-        _segments.Clear();
-        _segments.Add(this.transform);
-
-        for(int i = 1; i < this.initialSize; i++)
-        {
-            _segments.Add(Instantiate(this.segmentPrefab));
-        }
-
-        Score = 0;
-
         SceneManager.LoadScene(LossScene);
-        //this.transform.position = Vector3.zero;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -103,6 +104,18 @@ public class Snake : MonoBehaviour
             Vector2 playerPosY = transform.position;
             playerPosY.y = playerPosY.y -= 6;
             transform.position = playerPosY;
+        }
+    }
+
+    private void FindSnakeSigmentsClone()
+    {
+        GameObject[] snakeSegmentsArray = GameObject.FindGameObjectsWithTag("SnakeSegments");
+        if(Score == 7)
+        {
+            for(int i = 0; i < snakeSegmentsArray.Length; i++)
+            {
+                snakeSegmentsArray[i].tag = "Obstacle";
+            }
         }
     }
 
