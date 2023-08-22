@@ -29,4 +29,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Loss.unity
     guid: 9a9cc7cc44498ac45ba5e2bd545e2a2f
+  - enabled: 1
+    path: Assets/Scenes/Loss2.unity
+    guid: 69fb449839cf13a468278c110a857744
+  - enabled: 1
+    path: Assets/Scenes/Loss3.unity
+    guid: d8a682b5b183ef14c87e6285ad21e155
+  - enabled: 1
+    path: Assets/Scenes/Loss4.unity
+    guid: 6f0f7896c6eaed74d9b8a6b0be1870fa
+  - enabled: 1
+    path: Assets/Scenes/Loss5.unity
+    guid: b511b5031f719c54f95225b79644f4c7
+  - enabled: 1
+    path: Assets/Scenes/Loss6.unity
+    guid: 264add46b6e2a574895dc87deda13302
   m_configObjects: {}
