@@ -21,9 +21,9 @@ public class MusicManager : MonoBehaviour
     private void Update()
     {
         GameObject[] audioSourceObjs = GameObject.FindGameObjectsWithTag("AudioSourse");
-        if(audioSourceObjs.Length > 1)
+        if (audioSourceObjs.Length > 1)
         {
-            for(int i = 1; i < audioSourceObjs.Length; i++)
+            for (int i = 1; i < audioSourceObjs.Length; i++)
             {
                 Destroy(audioSourceObjs[i]);
             }
