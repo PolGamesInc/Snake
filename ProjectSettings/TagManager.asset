@@ -9,6 +9,7 @@ TagManager:
   - SnakeSegments
   - ObstacleWall
   - AudioSourse
+  - HarmlessSegment
   layers:
   - Default
   - TransparentFX

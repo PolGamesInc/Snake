@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Snake : MonoBehaviour
 {
-    private Vector2 _direction = Vector2.zero;
+    public Vector2 _direction = Vector2.zero;
     private int Score;
     private List<Transform> _segments = new List<Transform>();
     private string LossScene = "Loss";

@@ -11,11 +11,9 @@ public class MusicManager : MonoBehaviour
     [SerializeField] private AudioClip GameMelody;
     [SerializeField] private AudioSource audio;
 
-    public Snake Player;
-
     private void Start()
     {
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this);
     }
 
     private void Update()
