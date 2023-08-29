@@ -17,15 +17,13 @@ public class PauseSystem : MonoBehaviour
         {
             PauseElements[i].SetActive(false);
         }
-
-        previousDerection = Player.GetComponent<Snake>()._direction;
     }
 
     private void Update()
     {
         previousDerection = Player.GetComponent<Snake>()._direction;
 
-        if (Application.platform == RuntimePlatform.Android || Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             GameObject[] Obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
             for(int a = 0; a < Obstacles.Length; a++)
@@ -44,6 +42,27 @@ public class PauseSystem : MonoBehaviour
             {
                 GameElements[b].SetActive(false);
             }
+        }
+    }
+
+    public void PauseOn()
+    {
+        GameObject[] Obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
+        for (int a = 0; a < Obstacles.Length; a++)
+        {
+            Obstacles[a].tag = "HarmlessSegment";
+        }
+
+        Player.GetComponent<Snake>()._direction = Vector2.zero;
+
+        for (int i = 0; i < PauseElements.Length; i++)
+        {
+            PauseElements[i].SetActive(true);
+        }
+
+        for (int b = 0; b < GameElements.Length; b++)
+        {
+            GameElements[b].SetActive(false);
         }
     }
 
