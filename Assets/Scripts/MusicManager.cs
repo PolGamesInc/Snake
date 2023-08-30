@@ -16,7 +16,7 @@ public class MusicManager : MonoBehaviour
         //DontDestroyOnLoad(this);
     }
 
-    private void Update()
+    /*private void Update()
     {
         GameObject[] audioSourceObjs = GameObject.FindGameObjectsWithTag("AudioSourse");
         if (audioSourceObjs.Length > 1)
@@ -26,7 +26,7 @@ public class MusicManager : MonoBehaviour
                 Destroy(audioSourceObjs[i]);
             }
         }
-    }
+    }*/
 
     public void OnOffGameMelody()
     {

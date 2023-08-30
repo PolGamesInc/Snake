@@ -40,7 +40,7 @@ public class SnakeGoodWallLevel2X : MonoBehaviour
 
     private IEnumerator AssignSnakeSegments()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.1f);
         Snake snake = GetComponent<Snake>();
         snake.StatusScripts = true;
         for (int a = 0; a < snakeSegmentsArray.Length; a++)
