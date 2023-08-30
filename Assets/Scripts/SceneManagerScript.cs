@@ -15,34 +15,42 @@ public class SceneManagerScript : MonoBehaviour
     private string Level5 = "Level5";
     private string Level6 = "Level6";
 
+    [SerializeField] private GameObject Player;
+
     public void GoLevel1()
     {
         SceneManager.LoadScene(Level1);
+        Player.transform.position = new Vector2(-4, -4);
     }
 
     public void GoLevel2()
     {
         SceneManager.LoadScene(Level2);
+        Player.transform.position = new Vector2(-4, -4);
     }
 
     public void GoLevel3()
     {
         SceneManager.LoadScene(Level3);
+        Player.transform.position = new Vector2(-4, -4);
     }
 
     public void GoLevel4()
     {
         SceneManager.LoadScene(Level4);
+        Player.transform.position = new Vector2(-4, -4);
     }
 
     public void GoLevel5()
     {
         SceneManager.LoadScene(Level5);
+        Player.transform.position = new Vector2(-4, -4);
     }
 
     public void GoLevel6()
     {
         SceneManager.LoadScene(Level6);
+        Player.transform.position = new Vector2(-4, -4);
     }
 
     public void GoMenu()

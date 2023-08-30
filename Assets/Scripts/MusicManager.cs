@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class MusicManager : MonoBehaviour
 {
-    [SerializeField] private Image imageButtonSoundOnOff;
-    [SerializeField] private Sprite[] spriteButtonSoundArray;
+    public Image imageButtonSoundOnOff;
+    public Sprite[] spriteButtonSoundArray;
 
     [SerializeField] private AudioClip GameMelody;
     [SerializeField] private AudioSource audio;
