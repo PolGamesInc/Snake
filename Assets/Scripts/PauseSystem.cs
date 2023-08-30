@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using UnityEngine;
 
 public class PauseSystem : MonoBehaviour
@@ -16,6 +17,11 @@ public class PauseSystem : MonoBehaviour
         for (int i = 0; i < PauseElements.Length; i++)
         {
             PauseElements[i].SetActive(false);
+        }
+
+        for(int a = 0; a < GameElements.Length; a++)
+        {
+            GameElements[a].SetActive(true);
         }
     }
 
