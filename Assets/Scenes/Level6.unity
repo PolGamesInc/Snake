@@ -1501,7 +1501,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.777, y: 0.085}
   m_AnchorMax: {x: 0.777, y: 0.085}
-  m_AnchoredPosition: {x: -5.200013, y: -20.100143}
+  m_AnchoredPosition: {x: -5.200012, y: -20.100159}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &280494552
@@ -3068,7 +3068,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5185185, y: 0.20662498}
   m_AnchorMax: {x: 0.5185185, y: 0.20662498}
-  m_AnchoredPosition: {x: -2.000001, y: -22.199957}
+  m_AnchoredPosition: {x: -2, y: -22.199951}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &717821465
@@ -3874,7 +3874,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5185185, y: 0.09020834}
   m_AnchorMax: {x: 0.5185185, y: 0.09020834}
-  m_AnchoredPosition: {x: -2.000001, y: -30.100174}
+  m_AnchoredPosition: {x: -2, y: -30.100159}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &952817822
@@ -7331,6 +7331,7 @@ MonoBehaviour:
   gridAreaFive: {fileID: 1880150293}
   numberGridArea: 0
   SoundSelection: {fileID: 8300000, guid: 6e329059230e91a45a3c214dad618057, type: 3}
+  Player: {fileID: 2104582374}
 --- !u!82 &2042897175
 AudioSource:
   m_ObjectHideFlags: 0

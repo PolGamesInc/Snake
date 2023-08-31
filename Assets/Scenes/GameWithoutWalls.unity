@@ -4648,6 +4648,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridArea: {fileID: 1439416078}
   SoundSelection: {fileID: 8300000, guid: 6e329059230e91a45a3c214dad618057, type: 3}
+  Player: {fileID: 2104582374}
 --- !u!61 &2042897171
 BoxCollider2D:
   m_ObjectHideFlags: 0

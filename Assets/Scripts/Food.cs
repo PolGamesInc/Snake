@@ -5,6 +5,20 @@ public class Food : MonoBehaviour
     [SerializeField] private BoxCollider2D gridArea;
     [SerializeField] private AudioClip SoundSelection;
 
+    [SerializeField] private GameObject Player;
+
+    private void Update()
+    {
+        for (int i = 0; i < Player.GetComponent<Snake>()._segments.Count; i++)
+        {
+            if (this.transform.position == Player.GetComponent<Snake>()._segments[i].transform.position)
+            {
+                RandomazePosition();
+                print("RandomazePosition");
+            }
+        }
+    }
+
     private void Start()
     {
         RandomazePosition();

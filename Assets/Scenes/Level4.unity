@@ -5521,6 +5521,7 @@ MonoBehaviour:
   gridAreaFive: {fileID: 1696521910}
   numberGridArea: 0
   SoundSelection: {fileID: 8300000, guid: 6e329059230e91a45a3c214dad618057, type: 3}
+  Player: {fileID: 2104582374}
 --- !u!82 &2042897175
 AudioSource:
   m_ObjectHideFlags: 0

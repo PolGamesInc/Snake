@@ -32,7 +32,13 @@ public class PauseSystem : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             GameObject[] Obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
-            for(int a = 0; a < Obstacles.Length; a++)
+
+            for (int e = 0; e < Player.GetComponent<BlockBackMove>().ManagementButtonsFake.Length; e++)
+            {
+                Player.GetComponent<BlockBackMove>().ManagementButtonsFake[e].SetActive(false);
+            }
+
+            for (int a = 0; a < Obstacles.Length; a++)
             {
                 Obstacles[a].tag = "HarmlessSegment";
             }
@@ -54,6 +60,12 @@ public class PauseSystem : MonoBehaviour
     public void PauseOn()
     {
         GameObject[] Obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
+
+        for (int e = 0; e < Player.GetComponent<BlockBackMove>().ManagementButtonsFake.Length; e++)
+        {
+            Player.GetComponent<BlockBackMove>().ManagementButtonsFake[e].SetActive(false);
+        }
+
         for (int a = 0; a < Obstacles.Length; a++)
         {
             Obstacles[a].tag = "HarmlessSegment";

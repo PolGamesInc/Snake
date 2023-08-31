@@ -3503,8 +3503,8 @@ GameObject:
   - component: {fileID: 1276119878}
   - component: {fileID: 1276119877}
   - component: {fileID: 1276119876}
-  - component: {fileID: 1276119879}
   - component: {fileID: 1276119880}
+  - component: {fileID: 1276119879}
   m_Layer: 0
   m_Name: Food
   m_TagString: Food
@@ -3638,6 +3638,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridArea: {fileID: 1210248648}
   SoundSelection: {fileID: 8300000, guid: 6e329059230e91a45a3c214dad618057, type: 3}
+  Player: {fileID: 941673391}
 --- !u!82 &1276119880
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4417,7 +4418,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.335, y: 0.9165209}
   m_AnchorMax: {x: 0.335, y: 0.9165209}
-  m_AnchoredPosition: {x: -0.7299957, y: -1}
+  m_AnchoredPosition: {x: -0.72998047, y: -1}
   m_SizeDelta: {x: 255.09, y: 68.64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1810567200
@@ -4778,7 +4779,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5102222, y: 0.6746251}
   m_AnchorMax: {x: 0.5102222, y: 0.6746251}
-  m_AnchoredPosition: {x: 1, y: 0.8999939}
+  m_AnchoredPosition: {x: 1, y: 0.9000244}
   m_SizeDelta: {x: 542.33, y: 114.849976}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2031941600

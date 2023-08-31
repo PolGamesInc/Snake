@@ -7,7 +7,7 @@ public class BlockBackMove : MonoBehaviour
     [SerializeField] private GameObject Player;
 
     //[SerializeField] private GameObject[] ManagementButtons;
-    [SerializeField] private GameObject[] ManagementButtonsFake;
+    public GameObject[] ManagementButtonsFake;
 
     private void Update()
     {

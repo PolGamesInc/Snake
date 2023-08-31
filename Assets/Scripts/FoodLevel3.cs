@@ -12,6 +12,8 @@ public class FoodLevel3 : MonoBehaviour
     [SerializeField] private int numberGridArea;
     [SerializeField] private AudioClip SoundSelection;
 
+    [SerializeField] private GameObject Player;
+
     private void Start()
     {
         RandomazePositionOne();
@@ -45,6 +47,19 @@ public class FoodLevel3 : MonoBehaviour
         if(numberGridArea == 5)
         {
             print(numberGridArea);
+        }
+
+        for (int i = 0; i < Player.GetComponent<Snake>()._segments.Count; i++)
+        {
+            if (this.transform.position == Player.GetComponent<Snake>()._segments[i].transform.position)
+            {
+                RandomazePositionOne();
+                RandomazePositionTwo();
+                RandomazePositionFree();
+                RandomazePositionFour();
+                RandomazePositionFive();
+                print("RandomazePosition");
+            }
         }
     }
 

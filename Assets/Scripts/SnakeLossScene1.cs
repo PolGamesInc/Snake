@@ -40,6 +40,11 @@ public class SnakeLossScene1 : MonoBehaviour
             {
                 GameElements[i].SetActive(false);
             }
+
+            for (int e = 0; e < Player.GetComponent<BlockBackMove>().ManagementButtonsFake.Length; e++)
+            {
+                Player.GetComponent<BlockBackMove>().ManagementButtonsFake[e].SetActive(false);
+            }
             //SceneManager.LoadScene(LossScene);
         }
     }
