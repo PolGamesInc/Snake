@@ -11,33 +11,33 @@ public class MusicManager : MonoBehaviour
     [SerializeField] private AudioClip GameMelody;
     [SerializeField] private AudioSource audio;
 
+    public static bool StatusSpriteSoundButton = true;
+
     private void Start()
     {
         //DontDestroyOnLoad(this);
     }
 
-    /*private void Update()
+    private void Update()
     {
-        GameObject[] audioSourceObjs = GameObject.FindGameObjectsWithTag("AudioSourse");
-        if (audioSourceObjs.Length > 1)
+        if(StatusSpriteSoundButton == false)
         {
-            for (int i = 1; i < audioSourceObjs.Length; i++)
-            {
-                Destroy(audioSourceObjs[i]);
-            }
+            imageButtonSoundOnOff.sprite = spriteButtonSoundArray[0];
         }
-    }*/
+    }
 
     public void OnOffGameMelody()
     {
         if (AudioListener.volume == 1)
         {
             AudioListener.volume = 0;
+            StatusSpriteSoundButton = false;
             imageButtonSoundOnOff.sprite = spriteButtonSoundArray[0];
         }
         else
         {
             AudioListener.volume = 1;
+            StatusSpriteSoundButton = true;
             imageButtonSoundOnOff.sprite = spriteButtonSoundArray[1];
         }
     }
