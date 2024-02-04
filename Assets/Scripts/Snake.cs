@@ -80,7 +80,7 @@ public class Snake : MonoBehaviour
 
     private void ResetStay()
     {
-        Handheld.Vibrate();
+        //Handheld.Vibrate();
         //SceneManager.LoadScene(LossScene);
     }
 
