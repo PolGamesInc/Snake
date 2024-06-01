@@ -45,7 +45,16 @@ public class SnakeLossScene1 : MonoBehaviour
             {
                 Player.GetComponent<BlockBackMove>().ManagementButtonsFake[e].SetActive(false);
             }
+
+            StartCoroutine(WaitShowFullScreen());
             //SceneManager.LoadScene(LossScene);
         }
     }
+
+    private IEnumerator WaitShowFullScreen()
+    {
+        yield return new WaitForSeconds(1f);
+        Player.GetComponent<Fullscreen>().ShowFullScreenAdd();
+        print("Show add");
+    }   
 }
