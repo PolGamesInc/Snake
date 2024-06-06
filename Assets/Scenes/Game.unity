@@ -402,6 +402,7 @@ GameObject:
   - component: {fileID: 43595026}
   - component: {fileID: 43595030}
   - component: {fileID: 43595031}
+  - component: {fileID: 43595032}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -533,6 +534,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 941673391}
+--- !u!114 &43595032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43595025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 337c64d1a9b1bb5429ea0b67bac7a945, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RussianTextObjectsGame: []
+  EnglishTextObjectsGame: []
 --- !u!1 &192299949
 GameObject:
   m_ObjectHideFlags: 0
