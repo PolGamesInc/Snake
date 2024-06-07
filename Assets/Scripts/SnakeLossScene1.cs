@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SnakeLossScene1 : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class SnakeLossScene1 : MonoBehaviour
 
     [SerializeField] private GameObject[] LossElements;
     [SerializeField] private GameObject[] GameElements;
+
+    [SerializeField] private Text LossTextRussian;
+    [SerializeField] private Text LossTextEnglish;
 
     private void Start()
     {
@@ -26,6 +30,18 @@ public class SnakeLossScene1 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (LanguageManagerMenu.LanguageNumber == 2)
+        {
+            LossTextRussian.text = "";
+            LossElements[0].SetActive(false);
+        }
+
+        if (LanguageManagerMenu.LanguageNumber == 1)
+        {
+            LossTextEnglish.text = "";
+            LossElements[4].SetActive(false);
+        }
+
         if (collision.tag == "Obstacle" || collision.tag == "ObstacleWall")
         {
             Player.GetComponent<Snake>().Start();

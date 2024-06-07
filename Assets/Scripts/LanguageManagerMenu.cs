@@ -3,18 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ÑhoiceLanguageMenu : MonoBehaviour
+public class LanguageManagerMenu : MonoBehaviour
 {
     [SerializeField] private Text TextButtonRuOrEn;
-    public static int LanguageNumber;
+    public static int LanguageNumber = 1;
 
     [SerializeField] private GameObject [] RussianTextObjectsMenu;
     [SerializeField] private GameObject[] EnglishTextObjectsMenu;
 
     private void Start()
     {
-        LanguageNumber = 1;
-
         for (int i = 0; i < EnglishTextObjectsMenu.Length; i++)
         {
             EnglishTextObjectsMenu[i].SetActive(false);

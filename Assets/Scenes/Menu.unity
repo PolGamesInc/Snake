@@ -507,7 +507,6 @@ GameObject:
   - component: {fileID: 257443056}
   - component: {fileID: 257443055}
   - component: {fileID: 257443059}
-  - component: {fileID: 257443060}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -623,37 +622,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
---- !u!114 &257443060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 257443054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7e83c7e29a2623428220020101a30dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TextButtonRuOrEn: {fileID: 421430296}
-  RussianTextObjectsMenu:
-  - {fileID: 104294770}
-  - {fileID: 945354027}
-  - {fileID: 182980152}
-  - {fileID: 96790648}
-  - {fileID: 1759930916}
-  - {fileID: 763621452}
-  - {fileID: 1776924123}
-  - {fileID: 894870207}
-  EnglishTextObjectsMenu:
-  - {fileID: 1706951942}
-  - {fileID: 2081803735}
-  - {fileID: 1917331761}
-  - {fileID: 1290645307}
-  - {fileID: 1671386550}
-  - {fileID: 1923058070}
-  - {fileID: 1191120003}
-  - {fileID: 390529877}
 --- !u!1 &390529877
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,7 +698,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.514, y: 0.79881245}
   m_AnchorMax: {x: 0.514, y: 0.79881245}
-  m_AnchoredPosition: {x: -0.30999947, y: 0}
+  m_AnchoredPosition: {x: -0.30999756, y: 0}
   m_SizeDelta: {x: 882.2, y: 109.59}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &421430294
@@ -1080,6 +1048,69 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 522311495}
   m_CullTransparentMesh: 1
+--- !u!1 &635292499
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 635292501}
+  - component: {fileID: 635292500}
+  m_Layer: 0
+  m_Name: LanguageManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &635292500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635292499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7e83c7e29a2623428220020101a30dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextButtonRuOrEn: {fileID: 421430296}
+  RussianTextObjectsMenu:
+  - {fileID: 104294770}
+  - {fileID: 945354027}
+  - {fileID: 182980152}
+  - {fileID: 96790648}
+  - {fileID: 1759930916}
+  - {fileID: 763621452}
+  - {fileID: 1776924123}
+  - {fileID: 894870207}
+  EnglishTextObjectsMenu:
+  - {fileID: 1706951942}
+  - {fileID: 2081803735}
+  - {fileID: 1917331761}
+  - {fileID: 1290645307}
+  - {fileID: 1671386550}
+  - {fileID: 1923058070}
+  - {fileID: 1191120003}
+  - {fileID: 390529877}
+--- !u!4 &635292501
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635292499}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.9922114, y: -0.8384109, z: -2.3658621}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &703413807
 GameObject:
   m_ObjectHideFlags: 0
@@ -1918,8 +1949,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 257443060}
-        m_TargetAssemblyTypeName: RussiaOrEnglish, Assembly-CSharp
+      - m_Target: {fileID: 635292500}
+        m_TargetAssemblyTypeName: "\u0421hoiceLanguageMenu, Assembly-CSharp"
         m_MethodName: SwitchLanguage
         m_Mode: 1
         m_Arguments:
@@ -3142,3 +3173,4 @@ SceneRoots:
   - {fileID: 257443058}
   - {fileID: 703413809}
   - {fileID: 727454285}
+  - {fileID: 635292501}
