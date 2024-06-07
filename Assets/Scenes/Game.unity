@@ -2407,7 +2407,7 @@ GameObject:
   - component: {fileID: 937282635}
   - component: {fileID: 937282634}
   m_Layer: 5
-  m_Name: MenuRussianEnglish
+  m_Name: MenuPauseEnglish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
