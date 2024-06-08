@@ -9,7 +9,7 @@ public class SnakeLossScene1 : MonoBehaviour
     //private string LossScene = "Loss";
     [SerializeField] private GameObject Player;
 
-    [SerializeField] private GameObject[] LossElements;
+    public GameObject[] LossElements;
     [SerializeField] private GameObject[] GameElements;
 
     [SerializeField] private Text LossTextRussian;
@@ -61,6 +61,8 @@ public class SnakeLossScene1 : MonoBehaviour
             {
                 Player.GetComponent<BlockBackMove>().ManagementButtonsFake[e].SetActive(false);
             }
+
+            Snake.MovementArrow = false;
 
             StartCoroutine(WaitShowFullScreen());
             //SceneManager.LoadScene(LossScene);

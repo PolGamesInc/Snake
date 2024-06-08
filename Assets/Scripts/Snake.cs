@@ -17,8 +17,14 @@ public class Snake : MonoBehaviour
 
     public bool StatusScripts = true;
 
+    public static bool MovementArrow = true;
+
+    [SerializeField] private GameObject PauseSystemObject;
+
     public void Start()
     {
+        MovementArrow = true;
+
         for (int i = 1; i < _segments.Count; i++)
         {
             Destroy(_segments[i].gameObject);
@@ -41,21 +47,43 @@ public class Snake : MonoBehaviour
     {
         ScoreText.text = Score.ToString();
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (MovementArrow == true)
         {
-            _direction = Vector2.up;
+                if (Input.GetKeyDown(KeyCode.UpArrow))
+                {
+                    _direction = Vector2.up;
+                }
+                if (Input.GetKeyDown(KeyCode.DownArrow))
+                {
+                    _direction = Vector2.down;
+                }
+                if (Input.GetKeyDown(KeyCode.LeftArrow))
+                {
+                    _direction = Vector2.left;
+                }
+                if (Input.GetKeyDown(KeyCode.RightArrow))
+                {
+                    _direction = Vector2.right;
+                }
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        else if(MovementArrow == false)
         {
-            _direction = Vector2.down;
-        }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            _direction = Vector2.left;
-        }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            _direction = Vector2.right;
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                _direction = Vector2.zero;
+            }
+            else if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                _direction = Vector2.zero;
+            }
+            else if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                _direction = Vector2.zero;
+            }
+            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                _direction = Vector2.zero;
+            }
         }
 
         FindSnakeSigmentsClone();

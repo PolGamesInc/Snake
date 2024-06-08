@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PauseSystem : MonoBehaviour
 {
-    [SerializeField] private GameObject[] PauseElements;
+    public GameObject[] PauseElements;
     [SerializeField] private GameObject[] GameElements;
 
     [SerializeField] private GameObject Player;
@@ -28,6 +28,11 @@ public class PauseSystem : MonoBehaviour
     private void Update()
     {
         previousDerection = Player.GetComponent<Snake>()._direction;
+
+        if(Input.GetKeyUp(KeyCode.Escape))
+        {
+            PauseOn();
+        }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -59,6 +64,8 @@ public class PauseSystem : MonoBehaviour
 
     public void PauseOn()
     {
+        Snake.MovementArrow = false;
+
         GameObject[] Obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
 
         for (int e = 0; e < Player.GetComponent<BlockBackMove>().ManagementButtonsFake.Length; e++)
@@ -107,5 +114,7 @@ public class PauseSystem : MonoBehaviour
         {
             GameElements[b].SetActive(true);
         }
+
+        Snake.MovementArrow = true;
     }
 }
