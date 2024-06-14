@@ -62,7 +62,10 @@ public class SnakeLossScene1 : MonoBehaviour
                 Player.GetComponent<BlockBackMove>().ManagementButtonsFake[e].SetActive(false);
             }
 
-            Snake.MovementArrow = false;
+            Snake.MovementUp = false;
+            Snake.MovementDown = false;
+            Snake.MovementRight = false;
+            Snake.MovementLeft = false;
 
             StartCoroutine(WaitShowFullScreen());
             //SceneManager.LoadScene(LossScene);

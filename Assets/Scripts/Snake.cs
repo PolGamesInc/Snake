@@ -17,13 +17,19 @@ public class Snake : MonoBehaviour
 
     public bool StatusScripts = true;
 
-    public static bool MovementArrow = true;
+    public static bool MovementUp = true;
+    public static bool MovementDown = true;
+    public static bool MovementRight = true;
+    public static bool MovementLeft = true;
 
     [SerializeField] private GameObject PauseSystemObject;
 
     public void Start()
     {
-        MovementArrow = true;
+        MovementUp = true;
+        MovementDown = true;
+        MovementLeft = true;
+        MovementRight = true;
 
         for (int i = 1; i < _segments.Count; i++)
         {
@@ -47,42 +53,45 @@ public class Snake : MonoBehaviour
     {
         ScoreText.text = Score.ToString();
 
-        if (MovementArrow == true)
+        if (MovementUp == true)
         {
-                if (Input.GetKeyDown(KeyCode.UpArrow))
-                {
-                    _direction = Vector2.up;
-                }
-                if (Input.GetKeyDown(KeyCode.DownArrow))
-                {
-                    _direction = Vector2.down;
-                }
-                if (Input.GetKeyDown(KeyCode.LeftArrow))
-                {
-                    _direction = Vector2.left;
-                }
-                if (Input.GetKeyDown(KeyCode.RightArrow))
-                {
-                    _direction = Vector2.right;
-                }
+            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+            {
+                _direction = Vector2.up;
+                MovementDown = false;
+                MovementRight = true;
+                MovementLeft = true;
+            }
         }
-        else if(MovementArrow == false)
+
+        if (MovementDown == true)
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow))
+            if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
             {
-                _direction = Vector2.zero;
+                _direction = Vector2.down;
+                MovementUp = false;
+                MovementLeft = true;
+                MovementRight = true;
             }
-            else if (Input.GetKeyDown(KeyCode.DownArrow))
+        }
+        if (MovementLeft == true)
+        {
+            if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
             {
-                _direction = Vector2.zero;
+                _direction = Vector2.left;
+                MovementRight = false;
+                MovementUp = true;
+                MovementDown = true;
             }
-            else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        }
+        if (MovementRight == true)
+        {
+            if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
             {
-                _direction = Vector2.zero;
-            }
-            else if (Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                _direction = Vector2.zero;
+                _direction = Vector2.right;
+                MovementLeft = false;
+                MovementUp = true;
+                MovementDown = true;
             }
         }
 

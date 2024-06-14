@@ -21,42 +21,60 @@ public class SceneManagerScript : MonoBehaviour
     {
         SceneManager.LoadScene(Level1);
         Player.transform.position = new Vector2(-4, -4);
-        Snake.MovementArrow = true;
+        Snake.MovementUp = false;
+        Snake.MovementDown = false;
+        Snake.MovementRight = false;
+        Snake.MovementLeft = false;
     }
 
     public void GoLevel2()
     {
         SceneManager.LoadScene(Level2);
         Player.transform.position = new Vector2(-4, -4);
-        Snake.MovementArrow = true;
+        Snake.MovementUp = false;
+        Snake.MovementDown = false;
+        Snake.MovementRight = false;
+        Snake.MovementLeft = false;
     }
 
     public void GoLevel3()
     {
         SceneManager.LoadScene(Level3);
         Player.transform.position = new Vector2(-4, -4);
-        Snake.MovementArrow = true;
+        Snake.MovementUp = false;
+        Snake.MovementDown = false;
+        Snake.MovementRight = false;
+        Snake.MovementLeft = false;
     }
 
     public void GoLevel4()
     {
         SceneManager.LoadScene(Level4);
         Player.transform.position = new Vector2(-4, -4);
-        Snake.MovementArrow = true;
+        Snake.MovementUp = false;
+        Snake.MovementDown = false;
+        Snake.MovementRight = false;
+        Snake.MovementLeft = false;
     }
 
     public void GoLevel5()
     {
         SceneManager.LoadScene(Level5);
         Player.transform.position = new Vector2(-4, -4);
-        Snake.MovementArrow = true;
+        Snake.MovementUp = false;
+        Snake.MovementDown = false;
+        Snake.MovementRight = false;
+        Snake.MovementLeft = false;
     }
 
     public void GoLevel6()
     {
         SceneManager.LoadScene(Level6);
         Player.transform.position = new Vector2(-4, -4);
-        Snake.MovementArrow = true;
+        Snake.MovementUp = false;
+        Snake.MovementDown = false;
+        Snake.MovementRight = false;
+        Snake.MovementLeft = false;
     }
 
     public void GoMenu()

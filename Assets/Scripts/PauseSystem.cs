@@ -19,7 +19,7 @@ public class PauseSystem : MonoBehaviour
             PauseElements[i].SetActive(false);
         }
 
-        for(int a = 0; a < GameElements.Length; a++)
+        for (int a = 0; a < GameElements.Length; a++)
         {
             GameElements[a].SetActive(true);
         }
@@ -29,7 +29,7 @@ public class PauseSystem : MonoBehaviour
     {
         previousDerection = Player.GetComponent<Snake>()._direction;
 
-        if(Input.GetKeyUp(KeyCode.Escape))
+        if (Input.GetKeyUp(KeyCode.Escape))
         {
             PauseOn();
         }
@@ -55,7 +55,7 @@ public class PauseSystem : MonoBehaviour
                 PauseElements[i].SetActive(true);
             }
 
-            for(int b = 0; b < GameElements.Length; b++)
+            for (int b = 0; b < GameElements.Length; b++)
             {
                 GameElements[b].SetActive(false);
             }
@@ -64,7 +64,10 @@ public class PauseSystem : MonoBehaviour
 
     public void PauseOn()
     {
-        Snake.MovementArrow = false;
+        Snake.MovementUp = false;
+        Snake.MovementDown = false;
+        Snake.MovementRight = false;
+        Snake.MovementLeft = false;
 
         GameObject[] Obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
 
@@ -115,6 +118,9 @@ public class PauseSystem : MonoBehaviour
             GameElements[b].SetActive(true);
         }
 
-        Snake.MovementArrow = true;
+        Snake.MovementUp = true;
+        Snake.MovementDown = true;
+        Snake.MovementRight = true;
+        Snake.MovementLeft = true;
     }
 }
