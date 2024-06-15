@@ -13,14 +13,9 @@ public class MusicManager : MonoBehaviour
 
     public static bool StatusSpriteSoundButton = true;
 
-    private void Start()
-    {
-        //DontDestroyOnLoad(this);
-    }
-
     private void Update()
     {
-        if(StatusSpriteSoundButton == false)
+        if (StatusSpriteSoundButton == false)
         {
             imageButtonSoundOnOff.sprite = spriteButtonSoundArray[0];
         }

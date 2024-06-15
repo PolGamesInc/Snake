@@ -19,7 +19,7 @@ public class FoodLevel3 : MonoBehaviour
         RandomazePositionOne();
         RandomazePositionTwo();
         RandomazePositionFree();
-        
+
     }
 
     private void Update()
@@ -44,7 +44,7 @@ public class FoodLevel3 : MonoBehaviour
             print(numberGridArea);
         }
 
-        if(numberGridArea == 5)
+        if (numberGridArea == 5)
         {
             print(numberGridArea);
         }
@@ -123,7 +123,7 @@ public class FoodLevel3 : MonoBehaviour
 
             numberGridArea = Random.Range(0, 6);
             StartCoroutine(numberGridAreaNull());
-            if(numberGridArea == 1)
+            if (numberGridArea == 1)
             {
                 RandomazePositionOne();
             }
@@ -133,7 +133,7 @@ public class FoodLevel3 : MonoBehaviour
                 RandomazePositionTwo();
             }
 
-            if(numberGridArea == 3)
+            if (numberGridArea == 3)
             {
                 RandomazePositionFree();
             }
@@ -143,7 +143,7 @@ public class FoodLevel3 : MonoBehaviour
                 RandomazePositionFour();
             }
 
-            if(numberGridArea == 5)
+            if (numberGridArea == 5)
             {
                 RandomazePositionFive();
             }
@@ -152,7 +152,7 @@ public class FoodLevel3 : MonoBehaviour
 
     private IEnumerator numberGridAreaNull()
     {
-      yield return new WaitForSeconds(0.1f);
-      numberGridArea = 0;
+        yield return new WaitForSeconds(0.1f);
+        numberGridArea = 0;
     }
 }

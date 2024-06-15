@@ -11,7 +11,7 @@ public class SnakeGoodWallLevel2X : MonoBehaviour
         snakeSegmentsArray = GameObject.FindGameObjectsWithTag("Obstacle");
         if (this.gameObject.transform.position.x == -6)
         {
-            for(int i = 0; i < snakeSegmentsArray.Length; i++)
+            for (int i = 0; i < snakeSegmentsArray.Length; i++)
             {
                 snakeSegmentsArray[i].tag = "SnakeSegments";
                 Snake snake = GetComponent<Snake>();

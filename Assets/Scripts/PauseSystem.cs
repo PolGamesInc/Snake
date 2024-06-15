@@ -40,33 +40,6 @@ public class PauseSystem : MonoBehaviour
                 PauseOn();
             }
         }
-
-        /*if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            GameObject[] Obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
-
-            for (int e = 0; e < Player.GetComponent<BlockBackMove>().ManagementButtonsFake.Length; e++)
-            {
-                Player.GetComponent<BlockBackMove>().ManagementButtonsFake[e].SetActive(false);
-            }
-
-            for (int a = 0; a < Obstacles.Length; a++)
-            {
-                Obstacles[a].tag = "HarmlessSegment";
-            }
-
-            Player.GetComponent<Snake>()._direction = Vector2.zero;
-
-            for (int i = 0; i < PauseElements.Length; i++)
-            {
-                PauseElements[i].SetActive(true);
-            }
-
-            for (int b = 0; b < GameElements.Length; b++)
-            {
-                GameElements[b].SetActive(false);
-            }
-        }*/
     }
 
     public void PauseOn()
@@ -103,7 +76,6 @@ public class PauseSystem : MonoBehaviour
 
     public void Resume()
     {
-        //Player.GetComponent<Snake>()._direction = Vector2.left;
         if (Player.GetComponent<Snake>()._direction != previousDerection)
         {
             Player.GetComponent<Snake>()._direction = previousDerection;

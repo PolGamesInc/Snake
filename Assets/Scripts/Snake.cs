@@ -45,8 +45,6 @@ public class Snake : MonoBehaviour
         }
 
         Score = 0;
-
-        //this.transform.position = new Vector2(-4, -4);
     }
 
     private void Update()
@@ -116,12 +114,6 @@ public class Snake : MonoBehaviour
         _segments.Add(segment);
     }
 
-    private void ResetStay()
-    {
-        //Handheld.Vibrate();
-        //SceneManager.LoadScene(LossScene);
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Food")
@@ -131,7 +123,7 @@ public class Snake : MonoBehaviour
         }
         else if (collision.tag == "Obstacle")
         {
-            ResetStay();
+            print("ResetStay");
         }
 
         if (collision.tag == "GoodWallX")
@@ -149,7 +141,7 @@ public class Snake : MonoBehaviour
 
         if (collision.tag == "ObstacleWall")
         {
-            ResetStay();
+            print("ResetStay");
         }
     }
 

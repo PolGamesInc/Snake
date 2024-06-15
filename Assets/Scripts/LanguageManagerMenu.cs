@@ -8,7 +8,7 @@ public class LanguageManagerMenu : MonoBehaviour
     [SerializeField] private Text TextButtonRuOrEn;
     public static int LanguageNumber = 1;
 
-    [SerializeField] private GameObject [] RussianTextObjectsMenu;
+    [SerializeField] private GameObject[] RussianTextObjectsMenu;
     [SerializeField] private GameObject[] EnglishTextObjectsMenu;
 
     private void Start()
@@ -26,11 +26,11 @@ public class LanguageManagerMenu : MonoBehaviour
 
     private void Update()
     {
-        if(LanguageNumber == 1)
+        if (LanguageNumber == 1)
         {
             TextButtonRuOrEn.text = "EN";
 
-            for(int i = 0; i < RussianTextObjectsMenu.Length; i++)
+            for (int i = 0; i < RussianTextObjectsMenu.Length; i++)
             {
                 RussianTextObjectsMenu[i].SetActive(true);
             }
@@ -41,7 +41,7 @@ public class LanguageManagerMenu : MonoBehaviour
             }
         }
 
-        else if(LanguageNumber == 2)
+        else if (LanguageNumber == 2)
         {
             TextButtonRuOrEn.text = "аг";
 
@@ -61,7 +61,7 @@ public class LanguageManagerMenu : MonoBehaviour
     {
         LanguageNumber++;
 
-        if(LanguageNumber == 3)
+        if (LanguageNumber == 3)
         {
             LanguageNumber = 1;
         }

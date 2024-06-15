@@ -8,7 +8,7 @@ public class GoodWallX : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player")
+        if (collision.tag == "Player")
         {
             Vector2 posPlayer = playerTransform.transform.position;
             posPlayer.x = -posPlayer.x;

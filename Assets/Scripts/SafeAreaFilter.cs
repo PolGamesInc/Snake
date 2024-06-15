@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[RequireComponent (typeof(RectTransform))]
+[RequireComponent(typeof(RectTransform))]
 public class SafeAreaFilter : MonoBehaviour
 {
     private void Awake()

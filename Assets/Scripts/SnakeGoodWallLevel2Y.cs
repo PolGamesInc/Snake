@@ -5,7 +5,7 @@ using UnityEngine;
 public class SnakeGoodWallLevel2Y : MonoBehaviour
 {
     [SerializeField] private GameObject[] snakeSegmentsArray;
-    
+
     private void Update()
     {
         snakeSegmentsArray = GameObject.FindGameObjectsWithTag("Obstacle");

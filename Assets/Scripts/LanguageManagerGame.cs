@@ -9,9 +9,9 @@ public class LanguageManagerGame : MonoBehaviour
 
     private void Update()
     {
-        if(LanguageManagerMenu.LanguageNumber == 1)
+        if (LanguageManagerMenu.LanguageNumber == 1)
         {
-            for(int i = 0; i < RussianTextObjects.Length; i++)
+            for (int i = 0; i < RussianTextObjects.Length; i++)
             {
                 RussianTextObjects[i].SetActive(true);
             }
@@ -21,7 +21,7 @@ public class LanguageManagerGame : MonoBehaviour
                 EnglishTextObjects[i].SetActive(false);
             }
         }
-        else if(LanguageManagerMenu.LanguageNumber == 2)
+        else if (LanguageManagerMenu.LanguageNumber == 2)
         {
             for (int i = 0; i < EnglishTextObjects.Length; i++)
             {

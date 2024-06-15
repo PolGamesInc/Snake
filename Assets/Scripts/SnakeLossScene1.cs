@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class SnakeLossScene1 : MonoBehaviour
 {
-    //private string LossScene = "Loss";
     [SerializeField] private GameObject Player;
 
     public GameObject[] LossElements;
@@ -47,12 +46,12 @@ public class SnakeLossScene1 : MonoBehaviour
             Player.GetComponent<Snake>().Start();
             Player.GetComponent<Snake>()._direction = Vector2.zero;
 
-            for(int i = 0; i < LossElements.Length; i++)
+            for (int i = 0; i < LossElements.Length; i++)
             {
                 LossElements[i].SetActive(true);
             }
 
-            for(int i = 0;i < GameElements.Length; i++)
+            for (int i = 0; i < GameElements.Length; i++)
             {
                 GameElements[i].SetActive(false);
             }
@@ -70,7 +69,6 @@ public class SnakeLossScene1 : MonoBehaviour
             StartCoroutine(WaitShowFullScreen());
 
             PauseSystem.PausePermission = false;
-            //SceneManager.LoadScene(LossScene);
         }
     }
 
@@ -79,5 +77,5 @@ public class SnakeLossScene1 : MonoBehaviour
         yield return new WaitForSeconds(1f);
         Player.GetComponent<Fullscreen>().ShowFullScreenAdd();
         print("Show add");
-    }   
+    }
 }
