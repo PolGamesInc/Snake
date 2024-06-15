@@ -68,6 +68,8 @@ public class SnakeLossScene1 : MonoBehaviour
             Snake.MovementLeft = false;
 
             StartCoroutine(WaitShowFullScreen());
+
+            PauseSystem.PausePermission = false;
             //SceneManager.LoadScene(LossScene);
         }
     }

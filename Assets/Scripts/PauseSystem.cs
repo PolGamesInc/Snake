@@ -12,8 +12,12 @@ public class PauseSystem : MonoBehaviour
 
     public Vector2 previousDerection;
 
+    public static bool PausePermission = true;
+
     private void Start()
     {
+        PausePermission = true;
+
         for (int i = 0; i < PauseElements.Length; i++)
         {
             PauseElements[i].SetActive(false);
@@ -29,12 +33,15 @@ public class PauseSystem : MonoBehaviour
     {
         previousDerection = Player.GetComponent<Snake>()._direction;
 
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if (PausePermission == true)
         {
-            PauseOn();
+            if (Input.GetKeyUp(KeyCode.Escape))
+            {
+                PauseOn();
+            }
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        /*if (Input.GetKeyDown(KeyCode.Escape))
         {
             GameObject[] Obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
 
@@ -59,7 +66,7 @@ public class PauseSystem : MonoBehaviour
             {
                 GameElements[b].SetActive(false);
             }
-        }
+        }*/
     }
 
     public void PauseOn()
@@ -122,5 +129,7 @@ public class PauseSystem : MonoBehaviour
         Snake.MovementDown = true;
         Snake.MovementRight = true;
         Snake.MovementLeft = true;
+
+        PausePermission = true;
     }
 }
