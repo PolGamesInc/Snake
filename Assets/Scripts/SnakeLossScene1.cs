@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -13,6 +14,10 @@ public class SnakeLossScene1 : MonoBehaviour
 
     [SerializeField] private Text LossTextRussian;
     [SerializeField] private Text LossTextEnglish;
+
+    [DllImport("__Internal")]
+
+    private static extern void ShowFullscreen();
 
     private void Start()
     {
@@ -75,7 +80,7 @@ public class SnakeLossScene1 : MonoBehaviour
     private IEnumerator WaitShowFullScreen()
     {
         yield return new WaitForSeconds(1f);
-        Player.GetComponent<Fullscreen>().ShowFullScreenAdd();
+        ShowFullscreen();
         print("Show add");
     }
 }
