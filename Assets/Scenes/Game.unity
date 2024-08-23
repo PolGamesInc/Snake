@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2489,7 +2488,6 @@ GameObject:
   - component: {fileID: 941673392}
   - component: {fileID: 941673397}
   - component: {fileID: 941673398}
-  - component: {fileID: 941673399}
   m_Layer: 0
   m_Name: Snake
   m_TagString: Player
@@ -2700,18 +2698,6 @@ MonoBehaviour:
   - {fileID: 2120515365}
   - {fileID: 1723907659}
   - {fileID: 202504535}
---- !u!114 &941673399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 941673391}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b75638484f8ff2d47a876457316aaace, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &951409452
 GameObject:
   m_ObjectHideFlags: 0

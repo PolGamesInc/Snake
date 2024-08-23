@@ -16,7 +16,6 @@ public class SnakeLossScene1 : MonoBehaviour
     [SerializeField] private Text LossTextEnglish;
 
     [DllImport("__Internal")]
-
     private static extern void ShowFullscreen();
 
     private void Start()
@@ -32,7 +31,7 @@ public class SnakeLossScene1 : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
         if (LanguageManagerMenu.LanguageNumber == 2)
         {
@@ -71,16 +70,15 @@ public class SnakeLossScene1 : MonoBehaviour
             Snake.MovementRight = false;
             Snake.MovementLeft = false;
 
-            StartCoroutine(WaitShowFullScreen());
+            StartCoroutine(WaitAds());
 
             PauseSystem.PausePermission = false;
         }
     }
 
-    private IEnumerator WaitShowFullScreen()
+    public IEnumerator WaitAds()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.1f);
         ShowFullscreen();
-        print("Show add");
     }
 }
