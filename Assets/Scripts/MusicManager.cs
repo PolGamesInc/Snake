@@ -9,7 +9,7 @@ public class MusicManager : MonoBehaviour
     public Sprite[] spriteButtonSoundArray;
 
     [SerializeField] private AudioClip GameMelody;
-    [SerializeField] private AudioSource audio;
+    public AudioSource audio;
 
     public static bool StatusSpriteSoundButton = true;
 
@@ -35,5 +35,30 @@ public class MusicManager : MonoBehaviour
             StatusSpriteSoundButton = true;
             imageButtonSoundOnOff.sprite = spriteButtonSoundArray[1];
         }
+    }
+
+    public void OffMelodyAds()
+    {
+        audio.Pause();
+    }
+
+    public void OnMelodyAds()
+    {
+        audio.UnPause();
+    }
+
+    private void OnApplicationFocus(bool hasFocus)
+    {
+        Silence(!hasFocus);
+    }
+
+    private void OnApplicationPause(bool isPaused)
+    {
+        Silence(isPaused);
+    }
+
+    private void Silence(bool silence)
+    {
+        AudioListener.pause = silence;
     }
 }

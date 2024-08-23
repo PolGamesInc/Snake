@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3988,6 +3987,7 @@ MonoBehaviour:
   - {fileID: 1102808773}
   LossTextRussian: {fileID: 359079495}
   LossTextEnglish: {fileID: 1781180306}
+  AudioSourse: {fileID: 1621870159}
 --- !u!114 &1195597074
 MonoBehaviour:
   m_ObjectHideFlags: 0

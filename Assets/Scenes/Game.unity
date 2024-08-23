@@ -2680,6 +2680,7 @@ MonoBehaviour:
   - {fileID: 1833347657}
   LossTextRussian: {fileID: 2031941600}
   LossTextEnglish: {fileID: 1785483808}
+  AudioSourse: {fileID: 1940344622}
 --- !u!114 &941673398
 MonoBehaviour:
   m_ObjectHideFlags: 0

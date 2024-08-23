@@ -8,6 +8,7 @@ mergeInto(LibraryManager.library, {
           },
           onClose: function(wasShown) {
             console.log("Реклама Fullscreen закрылась.");
+            SendMessage("Audio Source", "OnMelodyAds");
           },
           onError: function(error) {
             console.log("Ошибка по рекламе Fullscreen.");

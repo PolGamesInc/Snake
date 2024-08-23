@@ -15,6 +15,8 @@ public class SnakeLossScene1 : MonoBehaviour
     [SerializeField] private Text LossTextRussian;
     [SerializeField] private Text LossTextEnglish;
 
+    [SerializeField] private GameObject AudioSourse;
+
     [DllImport("__Internal")]
     private static extern void ShowFullscreen();
 
@@ -70,6 +72,8 @@ public class SnakeLossScene1 : MonoBehaviour
             Snake.MovementRight = false;
             Snake.MovementLeft = false;
 
+            AudioSourse.GetComponent<MusicManager>().OffMelodyAds();
+
             StartCoroutine(WaitAds());
 
             PauseSystem.PausePermission = false;
@@ -78,7 +82,7 @@ public class SnakeLossScene1 : MonoBehaviour
 
     public IEnumerator WaitAds()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.25f);
         ShowFullscreen();
     }
 }

@@ -28,7 +28,7 @@ public class LanguageManagerMenu : MonoBehaviour
     {
         if (LanguageNumber == 1)
         {
-            TextButtonRuOrEn.text = "EN";
+            TextButtonRuOrEn.text = "аг";
 
             for (int i = 0; i < RussianTextObjectsMenu.Length; i++)
             {
@@ -43,7 +43,7 @@ public class LanguageManagerMenu : MonoBehaviour
 
         else if (LanguageNumber == 2)
         {
-            TextButtonRuOrEn.text = "аг";
+            TextButtonRuOrEn.text = "EN";
 
             for (int i = 0; i < EnglishTextObjectsMenu.Length; i++)
             {
