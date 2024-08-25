@@ -17,9 +17,6 @@ public class SnakeLossScene1 : MonoBehaviour
 
     [SerializeField] private GameObject AudioSourse;
 
-    [DllImport("__Internal")]
-    private static extern void ShowFullscreen();
-
     private void Start()
     {
         for (int i = 0; i < LossElements.Length; i++)
@@ -74,15 +71,7 @@ public class SnakeLossScene1 : MonoBehaviour
 
             AudioSourse.GetComponent<MusicManager>().OffMelodyAds();
 
-            StartCoroutine(WaitAds());
-
             PauseSystem.PausePermission = false;
         }
-    }
-
-    public IEnumerator WaitAds()
-    {
-        yield return new WaitForSeconds(0.25f);
-        ShowFullscreen();
     }
 }
