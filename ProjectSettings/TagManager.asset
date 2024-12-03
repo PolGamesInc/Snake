@@ -10,6 +10,7 @@ TagManager:
   - ObstacleWall
   - AudioSourse
   - HarmlessSegment
+  - YandexSDK
   layers:
   - Default
   - TransparentFX

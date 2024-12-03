@@ -52,6 +52,7 @@ public class SceneManagerScript : MonoBehaviour
     public void GoMenu()
     {
         SceneManager.LoadScene(MenuSTR);
+        StartCoroutine(WaitGameReadyAPIStop());
     }
 
     public void ExitGame()
@@ -123,5 +124,12 @@ public class SceneManagerScript : MonoBehaviour
         Snake.MovementDown = false;
         Snake.MovementRight = false;
         Snake.MovementLeft = false;
+    }
+
+    public IEnumerator WaitGameReadyAPIStop()
+    {
+        yield return new WaitForSeconds(0.1f);
+        GameReadyAPI.GameReadyAPIStop();
+        print("GameReaduAPIStop");
     }
 }

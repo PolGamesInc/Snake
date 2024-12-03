@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.k0fe.yandexgamessdk": "file:C:/Users/smogl/OneDrive/Desktop/Yandex API No Original/yandex-games-plugin-unity-master",
     "com.unity.collab-proxy": "2.4.3",
     "com.unity.device-simulator.devices": "1.0.0",
     "com.unity.feature.2d": "2.0.1",

@@ -72,6 +72,8 @@ public class PauseSystem : MonoBehaviour
         {
             GameElements[b].SetActive(false);
         }
+
+        StartCoroutine(WaitGameReadyAPIStop());
     }
 
     public void Resume()
@@ -103,5 +105,21 @@ public class PauseSystem : MonoBehaviour
         Snake.MovementLeft = true;
 
         PausePermission = true;
+
+        StartCoroutine(WaitGameReadyAPIStart());
+    }
+
+    public IEnumerator WaitGameReadyAPIStart()
+    {
+        yield return new WaitForSeconds(0.1f);
+        GameReadyAPI.GameReadyAPIStart();
+        print("GameReaduAPIStart");
+    }
+
+    public IEnumerator WaitGameReadyAPIStop()
+    {
+        yield return new WaitForSeconds(0.1f);
+        GameReadyAPI.GameReadyAPIStop();
+        print("GameReaduAPIStop");
     }
 }

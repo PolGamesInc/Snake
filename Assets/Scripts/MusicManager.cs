@@ -50,6 +50,14 @@ public class MusicManager : MonoBehaviour
     private void OnApplicationFocus(bool hasFocus)
     {
         Silence(!hasFocus);
+        if (hasFocus == true)
+        {
+            StartCoroutine(WaitGameReadyAPIStart());
+        }
+        else
+        {
+            StartCoroutine(WaitGameReadyAPIStop());
+        }
     }
 
     private void OnApplicationPause(bool isPaused)
@@ -60,5 +68,19 @@ public class MusicManager : MonoBehaviour
     private void Silence(bool silence)
     {
         AudioListener.pause = silence;
+    }
+
+    public IEnumerator WaitGameReadyAPIStart()
+    {
+        yield return new WaitForSeconds(0.1f);
+        GameReadyAPI.GameReadyAPIStart();
+        print("GameReaduAPIStart");
+    }
+
+    public IEnumerator WaitGameReadyAPIStop()
+    {
+        yield return new WaitForSeconds(0.11f);
+        GameReadyAPI.GameReadyAPIStop();
+        print("GameReaduAPIStop");
     }
 }

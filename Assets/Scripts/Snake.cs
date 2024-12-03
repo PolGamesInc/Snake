@@ -24,8 +24,12 @@ public class Snake : MonoBehaviour
 
     [SerializeField] private GameObject PauseSystemObject;
 
+    public int OneGameReadyAPIStart = 0;
+
     public void Start()
     {
+        OneGameReadyAPIStart += 1;
+
         MovementUp = true;
         MovementDown = true;
         MovementLeft = true;
@@ -45,6 +49,11 @@ public class Snake : MonoBehaviour
         }
 
         Score = 0;
+
+        if (OneGameReadyAPIStart == 1)
+        {
+            StartCoroutine(WaitGameReadyAPIStart());
+        }
     }
 
     private void Update()
@@ -178,5 +187,12 @@ public class Snake : MonoBehaviour
     public void MoveRight()
     {
         _direction = Vector2.right;
+    }
+
+    public IEnumerator WaitGameReadyAPIStart()
+    {
+        yield return new WaitForSeconds(0.1f);
+        GameReadyAPI.GameReadyAPIStart();
+        print("GameReaduAPIStart");
     }
 }

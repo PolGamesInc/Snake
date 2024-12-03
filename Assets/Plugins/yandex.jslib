@@ -5,10 +5,14 @@ mergeInto(LibraryManager.library, {
       callbacks: {
           onOpen: function(wasShown) {
             console.log('Реклама Fullscreen открылась.');
+            SendMessage("GameReadyAPI", "GameReadyAPIStop");
+            SendMessage("MusicManager", "OffMelodyAds");
           },
           onClose: function(wasShown) {
             console.log("Реклама Fullscreen закрылась.");
             SendMessage("Audio Source", "OnMelodyAds");
+            SendMessage("GameReadyAPI", "GameReadyAPIReady");
+            SendMessage("MusicManager", "OnMelodyAds");
           },
           onError: function(error) {
             console.log("Ошибка по рекламе Fullscreen.");

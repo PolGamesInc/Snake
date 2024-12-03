@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 public class SnakeLossScene1 : MonoBehaviour
 {
+    [DllImport("__Internal")]
+    private static extern void ShowFullscreen();
+
     [SerializeField] private GameObject Player;
 
     public GameObject[] LossElements;
@@ -72,6 +75,23 @@ public class SnakeLossScene1 : MonoBehaviour
             AudioSourse.GetComponent<MusicManager>().OffMelodyAds();
 
             PauseSystem.PausePermission = false;
+
+            StartCoroutine(WaitGameReadyAPIStop());
+
+            StartCoroutine(WaitAds());
         }
+    }
+
+    public IEnumerator WaitGameReadyAPIStop()
+    {
+        yield return new WaitForSeconds(0.1f);
+        GameReadyAPI.GameReadyAPIStop();
+        print("GameReaduAPIStop");
+    }
+
+    public IEnumerator WaitAds()
+    {
+        yield return new WaitForSeconds(0.25f);
+        ShowFullscreen();
     }
 }

@@ -3618,6 +3618,7 @@ MonoBehaviour:
   ScoreText: {fileID: 944289508}
   StatusScripts: 1
   PauseSystemObject: {fileID: 0}
+  OneGameReadyAPIStart: 0
 --- !u!61 &1195597067
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4097,6 +4098,50 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1294303020
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1294303022}
+  - component: {fileID: 1294303021}
+  m_Layer: 0
+  m_Name: GameReadyAPI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1294303021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294303020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fa46a9161708c042bd0e190b9cf2e30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1294303022
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294303020}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.7631738, y: 0.17726907, z: -0.0013118964}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5748,6 +5793,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1986645262}
   m_CullTransparentMesh: 1
+--- !u!1001 &2011891953
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 12778234783248565, guid: b8cc9fa895ac03a4f8d994ed62b6341e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 207.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 12778234783248565, guid: b8cc9fa895ac03a4f8d994ed62b6341e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 136.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 12778234783248565, guid: b8cc9fa895ac03a4f8d994ed62b6341e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 12778234783248565, guid: b8cc9fa895ac03a4f8d994ed62b6341e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 12778234783248565, guid: b8cc9fa895ac03a4f8d994ed62b6341e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 12778234783248565, guid: b8cc9fa895ac03a4f8d994ed62b6341e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 12778234783248565, guid: b8cc9fa895ac03a4f8d994ed62b6341e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 12778234783248565, guid: b8cc9fa895ac03a4f8d994ed62b6341e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 12778234783248565, guid: b8cc9fa895ac03a4f8d994ed62b6341e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 12778234783248565, guid: b8cc9fa895ac03a4f8d994ed62b6341e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 12778234783248567, guid: b8cc9fa895ac03a4f8d994ed62b6341e, type: 3}
+      propertyPath: m_Name
+      value: YandexSDK
+      objectReference: {fileID: 0}
+    - target: {fileID: 12778234783248567, guid: b8cc9fa895ac03a4f8d994ed62b6341e, type: 3}
+      propertyPath: m_TagString
+      value: YandexSDK
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b8cc9fa895ac03a4f8d994ed62b6341e, type: 3}
 --- !u!1 &2063276384
 GameObject:
   m_ObjectHideFlags: 0
@@ -5985,3 +6091,5 @@ SceneRoots:
   - {fileID: 1621870162}
   - {fileID: 1201947825}
   - {fileID: 1973677006}
+  - {fileID: 1294303022}
+  - {fileID: 2011891953}
