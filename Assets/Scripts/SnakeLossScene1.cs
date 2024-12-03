@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -20,6 +21,12 @@ public class SnakeLossScene1 : MonoBehaviour
 
     [SerializeField] private GameObject AudioSourse;
 
+    [SerializeField] private float SecondForAds;
+    private bool PermissionAds = false;
+
+    [SerializeField] private Text TimeForAds;
+    [SerializeField] private GameObject TimeForAdsText;
+
     private void Start()
     {
         for (int i = 0; i < LossElements.Length; i++)
@@ -30,6 +37,30 @@ public class SnakeLossScene1 : MonoBehaviour
         for (int i = 0; i < GameElements.Length; i++)
         {
             GameElements[i].SetActive(true);
+        }
+        TimeForAdsText.SetActive(false);
+    }
+
+    private void FixedUpdate()
+    {
+        if (PermissionAds == true)
+        {
+            SecondForAds -= 1 * Time.deltaTime;
+        }
+        else if(PermissionAds == false)
+        {
+            SecondForAds = 4;
+        }
+
+        TimeForAds.text = SecondForAds.ToString();
+    }
+
+    private void Update()
+    {
+        if(SecondForAds <= 0)
+        {
+            PermissionAds = false;
+            TimeForAdsText.SetActive(false);
         }
     }
 
@@ -78,6 +109,9 @@ public class SnakeLossScene1 : MonoBehaviour
 
             StartCoroutine(WaitGameReadyAPIStop());
 
+            TimeForAdsText.SetActive(true);
+
+            PermissionAds = true;
             StartCoroutine(WaitAds());
         }
     }
@@ -91,7 +125,7 @@ public class SnakeLossScene1 : MonoBehaviour
 
     public IEnumerator WaitAds()
     {
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(4f);
         ShowFullscreen();
     }
 }
