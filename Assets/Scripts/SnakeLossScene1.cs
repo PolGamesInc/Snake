@@ -26,6 +26,7 @@ public class SnakeLossScene1 : MonoBehaviour
 
     [SerializeField] private Text TimeForAds;
     [SerializeField] private GameObject TimeForAdsText;
+    [SerializeField] private GameObject ShowFullScreenFor;
 
     private void Start()
     {
@@ -39,6 +40,7 @@ public class SnakeLossScene1 : MonoBehaviour
             GameElements[i].SetActive(true);
         }
         TimeForAdsText.SetActive(false);
+        ShowFullScreenFor.SetActive(false);
     }
 
     private void FixedUpdate()
@@ -61,6 +63,7 @@ public class SnakeLossScene1 : MonoBehaviour
         {
             PermissionAds = false;
             TimeForAdsText.SetActive(false);
+            ShowFullScreenFor.SetActive(false);
         }
     }
 
@@ -110,6 +113,7 @@ public class SnakeLossScene1 : MonoBehaviour
             StartCoroutine(WaitGameReadyAPIStop());
 
             TimeForAdsText.SetActive(true);
+            ShowFullScreenFor.SetActive(true);
 
             PermissionAds = true;
             StartCoroutine(WaitAds());
