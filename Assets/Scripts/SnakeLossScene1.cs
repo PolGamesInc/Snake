@@ -28,6 +28,8 @@ public class SnakeLossScene1 : MonoBehaviour
     [SerializeField] private GameObject TimeForAdsText;
     [SerializeField] private GameObject ShowFullScreenFor;
 
+    private bool ShowTextForAdsTime;
+
     private void Start()
     {
         for (int i = 0; i < LossElements.Length; i++)
@@ -41,6 +43,9 @@ public class SnakeLossScene1 : MonoBehaviour
         }
         TimeForAdsText.SetActive(false);
         ShowFullScreenFor.SetActive(false);
+
+        ShowTextForAdsTime = false;
+        StartCoroutine(WaitShowTextForAds());
     }
 
     private void FixedUpdate()
@@ -51,7 +56,7 @@ public class SnakeLossScene1 : MonoBehaviour
         }
         else if(PermissionAds == false)
         {
-            SecondForAds = 4;
+            SecondForAds = 3;
         }
 
         TimeForAds.text = SecondForAds.ToString();
@@ -112,8 +117,11 @@ public class SnakeLossScene1 : MonoBehaviour
 
             StartCoroutine(WaitGameReadyAPIStop());
 
-            TimeForAdsText.SetActive(true);
-            ShowFullScreenFor.SetActive(true);
+            if (ShowTextForAdsTime == true)
+            {
+                TimeForAdsText.SetActive(true);
+                ShowFullScreenFor.SetActive(true);
+            }
 
             PermissionAds = true;
             StartCoroutine(WaitAds());
@@ -129,7 +137,13 @@ public class SnakeLossScene1 : MonoBehaviour
 
     public IEnumerator WaitAds()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
         ShowFullscreen();
+    }
+
+    private IEnumerator WaitShowTextForAds()
+    {
+        yield return new WaitForSeconds(60f);
+        ShowTextForAdsTime = true;
     }
 }
